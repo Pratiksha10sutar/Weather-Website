@@ -53,9 +53,6 @@ $(function(){
     }
   });
 
-  // Theme toggle
-  initTheme();
-
   // Start clock (Asia/Kolkata)
   startClock('Asia/Kolkata');
 
@@ -410,18 +407,4 @@ function handleLocationError(error){
   }
 }
 
-/* Theme init & toggle */
-function initTheme(){
-  const root = document.documentElement;
-  const saved = localStorage.getItem('weather_theme') || 'light';
-  if (saved === 'dark') root.classList.add('dark');
-  else root.classList.remove('dark');
-
-  $('#theme-toggle').on('click', () => {
-    root.classList.toggle('dark');
-    const now = root.classList.contains('dark') ? 'dark' : 'light';
-    localStorage.setItem('weather_theme', now);
-  });
-}
-
-/* Small utility: when using api key absent, many functions will fallback */
+/* Note: theme toggle and dark-mode handling removed to match updated HTML/CSS */
