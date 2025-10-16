@@ -1,49 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather Dashboard</title>
-
+  <meta charset="utf-8" />
+  <title>Weather Dashboard — Tabs & Autocomplete (Enhanced)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <!-- jQuery & jQuery UI -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Chart.js (for hourly chart) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1 class="title">🌦️ Weather Dashboard</h1>
-    <div class="search-box">
-      <input type="text" id="cityInput" placeholder="Search city..." />
-      <button id="searchBtn">Search</button>
+  <div id="background" aria-hidden="true"></div>
+
+  <div id="app-content">
+    <div class="container" role="main">
+      <header>
+        <div class="title-row">
+          <h1>Weather Dashboard</h1>
+          <div id="clock" aria-live="polite">—</div>
+        </div>
+
+        <div class="controls">
+          <div class="search-row">
+            <input id="city-input" type="text" placeholder="Enter city name (e.g., Pune)" aria-label="City name" />
+            <button id="add-city" aria-label="Add city">Add City</button>
+            <button id="getLocationBtn" aria-label="Use my location">🌍 Use My Location</button>
+            <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
+          </div>
+          <button id="clear-all" title="Remove all saved cities">Clear All</button>
+        </div>
+      </header>
+
+      <div id="tabs" class="ui-widget">
+        <ul id="tabs-list" role="tablist"></ul>
+        <!-- Tab panels are injected dynamically -->
+      </div>
     </div>
-
-    <div id="tabs">
-      <ul>
-        <li><a href="#tab1">Current Weather</a></li>
-        <li><a href="#tab2">5-Day Forecast</a></li>
-        <li><a href="#tab3">Air Quality</a></li>
-      </ul>
-
-      <div id="tab1">
-        <div id="current-weather"></div>
-      </div>
-
-      <div id="tab2">
-        <canvas id="forecastChart"></canvas>
-      </div>
-
-      <div id="tab3">
-        <div id="air-quality"></div>
-      </div>
-    </div>
-
-    <p id="datetime"></p>
   </div>
 
   <script src="script.js"></script>
