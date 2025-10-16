@@ -1,4 +1,4 @@
-const apiKey = "4bcefca3b49816724286402234d94e7c"; // Replace with your API key
+const apiKey = "YOUR_OPENWEATHERMAP_KEY"; // Replace with your API key
 
 $(function () {
   $("#tabs").tabs();
