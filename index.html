@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Weather Dashboard — Tabs & Autocomplete</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- jQuery & jQuery UI (CDN) -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="background"></div>
+  <div id="app-content">
+  <div class="container">
+    <header>
+      <div class="title-row">
+        <h1>Weather Dashboard</h1>
+        <div id="clock" aria-live="polite">—</div>
+      </div>
+
+      <div class="controls">
+        <div class="search-row">
+          <input id="city-input" type="text" placeholder="Enter city name (e.g., Pune)" aria-label="City name" />
+          <button id="add-city">Add City</button>
+          <button id="getLocationBtn">🌍 Use My Location</button>
+
+        </div>
+        <button id="clear-all" title="Remove all saved cities">Clear All</button>
+      </div>
+    </header>
+
+    <div id="tabs" class="ui-widget">
+      <ul id="tabs-list">
+        <!-- tabs headers injected here -->
+      </ul>
+      <!-- tab panels injected here -->
+    </div>
+
+   
+  </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
